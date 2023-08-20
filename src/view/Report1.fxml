@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="600.0" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report1">
+   <children>
+      <VBox minHeight="600.0" minWidth="600.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Report 1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children></HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <ComboBox fx:id="MonthCb" prefWidth="150.0" promptText="Month" />
+                  <ComboBox fx:id="TypeCb" prefWidth="150.0" promptText="Type" />
+                  <Button fx:id="GetReportBtn" mnemonicParsing="false" onAction="#OnGetReportBtn" text="Get Report" />
+               </children></HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="ReportLb">
+                     <HBox.margin>
+                        <Insets top="50.0" />
+                     </HBox.margin></Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutY="592.0" prefHeight="37.0" prefWidth="600.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button fx:id="BackBtn" mnemonicParsing="false" onAction="#OnBackBtn" text="Back" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

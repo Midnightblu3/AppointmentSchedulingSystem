@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAppointmentForm">
+   <children>
+      <VBox minHeight="600.0" minWidth="550.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" minHeight="75.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Add Appointment">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children></HBox>
+            <HBox minHeight="400.0" minWidth="550.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <GridPane minWidth="550.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="350.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Id :">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Title :" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Description :" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Location :" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Type :" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Start Time :" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="End Time :" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Customer :" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="User :" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Contact :" GridPane.rowIndex="9">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <TextField fx:id="IdTxf" disable="true" editable="false" maxWidth="100.0" prefWidth="100.0" promptText="Auto Generated" GridPane.columnIndex="1" />
+                        <TextField fx:id="TitleTxf" maxWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="LocationTxf" maxWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <ComboBox fx:id="EndTimeHourCb" maxWidth="75.0" onAction="#OnEndTimeHrCb" prefWidth="150.0" promptText="HH">
+                                 <HBox.margin>
+                                    <Insets left="180.0" />
+                                 </HBox.margin></ComboBox>
+                              <Label text=":" />
+                              <ComboBox fx:id="EndTimeMinCb" maxWidth="75.0" prefWidth="150.0" promptText="MM" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="160.0" layoutY="212.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <DatePicker fx:id="StartTimeDp" maxWidth="200.0" onAction="#OnStartDateDp" prefWidth="170.0" />
+                              <ComboBox fx:id="StartTimeHourCb" maxWidth="75.0" onAction="#OnStartTimeHr" prefWidth="150.0" promptText="HH" />
+                              <Label text=":" />
+                              <ComboBox fx:id="StartTimeMinCb" maxWidth="75.0" onAction="#OnStartTimeMin" prefWidth="150.0" promptText="MM" />
+                           </children>
+                        </HBox>
+                        <TextField fx:id="TypeTxf" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="CustomerCb" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <ComboBox fx:id="UserCb" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="ContactCb" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextArea fx:id="DescriptionTxa" maxWidth="350.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="SaveBtn" mnemonicParsing="false" onAction="#OnSaveBtn" text="Save" />
+                  <Button fx:id="ExitBtn" mnemonicParsing="false" onAction="#OnExistBtn" text="Cancel">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin></Button>
+               </children></HBox>
+            <HBox maxHeight="75.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="ErrorTextLb">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children></HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

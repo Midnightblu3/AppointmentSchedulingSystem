@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerForm">
+   <children>
+      <VBox minHeight="600.0" minWidth="550.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" minHeight="100.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Add Customer">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children></HBox>
+            <HBox maxHeight="300.0" minHeight="300.0" prefHeight="400.0" prefWidth="200.0">
+               <children>
+                  <GridPane minWidth="550.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="350.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="TOP_LEFT" text="ID :">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Name :" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding></Label>
+                        <Label text="Address :" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding></Label>
+                        <Label text="State/Province" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Country :" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Postal Code :" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <Label text="Phone :" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Label>
+                        <TextField disable="true" editable="false" maxWidth="100.0" promptText="Auto Generated" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="CustNameTxf" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="CustStreetAddressTxf" maxWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="StateProvinceCb" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="CountryCb" onAction="#onCountryCb" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="PostalCodeTxf" maxWidth="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="PhoneTxf" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="SaveBtn" mnemonicParsing="false" onAction="#OnSaveBtn" text="Save">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+                  <Button fx:id="CancelBtn" mnemonicParsing="false" onAction="#OnCancelBtn" text="Cancel">
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin></Button>
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="ErrorTxtLb">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin></Label>
+               </children></HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

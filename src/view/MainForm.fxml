@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="1200.0" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainForm">
+   <children>
+      <HBox minHeight="600.0" minWidth="1200.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox minWidth="600.0" prefHeight="200.0" prefWidth="540.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxWidth="600.0" minHeight="600.0" minWidth="300.0" prefHeight="600.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" text="Customers">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Label>
+                        <TableView fx:id="CustomerTable" maxWidth="600.0" minHeight="450.0" prefHeight="450.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="CustIdCol" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Id" />
+                            <TableColumn fx:id="CustNameCol" maxWidth="100.0" minWidth="150.0" prefWidth="100.0" text="Name" />
+                              <TableColumn fx:id="CustAddressCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Address" />
+                              <TableColumn fx:id="CustPostalCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Postal Code" />
+                              <TableColumn fx:id="CustPhoneCol" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" text="Phone" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                           <children>
+                              <Button fx:id="CustAddBtnMain" mnemonicParsing="false" onAction="#OnAddCustBtn" text="Add" />
+                              <Button fx:id="CustModBtnMain" mnemonicParsing="false" onAction="#OnModifyCustBtn" text="Modify" />
+                              <Button fx:id="CustDelBtnMain" mnemonicParsing="false" onAction="#OnDelCustBtn" text="Delete">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="Report1Btn" mnemonicParsing="false" onAction="#OnReport1Btn" text="Report 1 ">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="Report2Btn" mnemonicParsing="false" onAction="#OnReport2Btn" text="Report 2">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Report3Btn" layoutX="62.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnReport3Btn" text="Report 3" />
+                              <Label fx:id="ErrorTxtLb">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" minWidth="600.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="Appointments">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" minHeight="20.0" spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="AllAppViewRb" mnemonicParsing="false" onAction="#OnAllAppointmentRb" text="All Appointment">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="AppViewTg" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="MonthlyViewRb" mnemonicParsing="false" onAction="#OnMonthRb" text="Month" toggleGroup="$AppViewTg" />
+                        <RadioButton fx:id="WeeklyViewRb" layoutX="127.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnWeekRb" text="Week" toggleGroup="$AppViewTg" />
+                     </children>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="AppTable" minHeight="450.0" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="AppIdCol" maxWidth="-1.0" minWidth="30.0" prefWidth="50.0" text="Id" />
+                      <TableColumn fx:id="AppTitleCol" maxWidth="-1.0" minWidth="50.0" prefWidth="60.0" text="Title" />
+                        <TableColumn fx:id="AppDescripCol" maxWidth="-1.0" minWidth="100.0" prefWidth="75.0" text="Description" />
+                        <TableColumn fx:id="AppLocationCol" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Location" />
+                        <TableColumn fx:id="AppStartDateTime" maxWidth="-Infinity" minWidth="150.0" prefWidth="150.0" text="Start Date and Time" />
+                        <TableColumn fx:id="AppEndDateTime" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="End Date and Time" />
+                        <TableColumn fx:id="AppTypeCol" maxWidth="-1.0" minWidth="75.0" prefWidth="50.0" text="Type" />
+                        <TableColumn fx:id="AppCustIdCol" maxWidth="-1.0" minWidth="75.0" prefWidth="75.0" text="Customer" />
+                        <TableColumn fx:id="AppUserIdCol" maxWidth="-1.0" minWidth="30.0" prefWidth="50.0" text="User" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <VBox>
+                     <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="AppAddBtnMain" mnemonicParsing="false" onAction="#OnAddAppBtn" text="Add" />
+                              <Button fx:id="AppModBtnMain" mnemonicParsing="false" onAction="#OnModifyAppBtn" text="Modify" />
+                              <Button fx:id="AppDelBtnMain" mnemonicParsing="false" onAction="#OnDelAppBtn" text="Delete">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="ExitBtnMain" mnemonicParsing="false" onAction="#OnExit" text="Exit">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
